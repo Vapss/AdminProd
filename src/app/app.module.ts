@@ -9,6 +9,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { CategoryComponent } from './category/category.component';
 import { BienvenidoComponent } from './bienvenido/bienvenido.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+
 
 @NgModule({
   declarations: [
@@ -16,7 +18,7 @@ import { BienvenidoComponent } from './bienvenido/bienvenido.component';
     HeaderComponent,
     FooterComponent,
     CategoryComponent,
-    BienvenidoComponent
+    BienvenidoComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,6 +26,7 @@ import { BienvenidoComponent } from './bienvenido/bienvenido.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
