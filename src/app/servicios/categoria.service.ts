@@ -8,7 +8,7 @@ import { Category } from '../modelo/category';
   providedIn: 'root'
 })
 export class CategoriaService {
-  private urlEndPoint: string = 'http://localhost:8080/api/categoria';
+  private urlEndPoint: string = 'http://localhost:3306/api/categoria';
   constructor(private http : HttpClient) { }
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
 
