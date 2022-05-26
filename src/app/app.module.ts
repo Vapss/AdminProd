@@ -10,6 +10,14 @@ import { FooterComponent } from './footer/footer.component';
 import { CategoryComponent } from './category/category.component';
 import { BienvenidoComponent } from './bienvenido/bienvenido.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ListadoComponent } from './category/listado/listado.component';
+import { faFilm } from '@fortawesome/free-solid-svg-icons';
+import { faFish } from '@fortawesome/free-solid-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
+
+
 
 
 @NgModule({
@@ -19,6 +27,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FooterComponent,
     CategoryComponent,
     BienvenidoComponent,
+    ListadoComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,4 +40,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor() {
+    library.add(fas, far, faFilm, faFish);
+  }
+}
