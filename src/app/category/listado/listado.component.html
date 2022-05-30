@@ -1,68 +1,39 @@
 <div class="mb-3"></div>
-<div class="container">
-        <div class="card border-success mb-3">
-            <div class="card-header text-danger">
-                <h2 class="text-center">
-                    {{titulo}}
-                </h2>
 
+<div class="container">
+    <div class="card border-success mb-3">
+            <div class="card-header text-danger">
+                <h2 class="text-center">{{titulo}}</h2>
             </div>
             <div class="card-body text-primary table-responsive">
                 <div class="my-2 text-left">
-                    <button class="btn btn-outline-primary" type="button" routerLink="/category">
-                        <i class="fa-solid fa-address-book"></i>
-                        Crear Categoría
+                    <button class="btn btn-outline-primary " type="button" routerLink="/categorias">
+                        Registrar Categoria <i class="fa-solid fa-dog"></i>
                     </button>
                 </div>
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>
-                                Nombre
-                            </th>
-                            <th>
-                                Descripción
-                            </th>
-                            <th>
-                                Acciones
-                            </th>
-                            <th>
-                                Actualizar
-                            </th>
-                            <th>
-                                Eliminar
-                            </th>
-                        </tr>
-                        
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                1
-                            </td>
-                            <td>
-                                Nombre
-                            </td>
-                            <td>
-                                Descripción
-                            </td>
-                            <td>
-                                <button class="btn btn-outline-success" type="button" RouterLink="['/category',1]">
-                                    <i class="fa-solid fa-check"></i>
-                                    Actualizar
-                                </button>
-                            </td>
-                            <td>
-                                <button class="btn btn-outline-danger" type="button" RouterLink="['/category',1]">
-                                    <i class="fa-solid fa-trash"></i>
-                                    Eliminar
-                                </button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
             </div>
-        </div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Clave</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Actualizar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let categoria of listaDeCategorias">
+                        <td>{{categoria.idCategoria}}</td>
+                        <td>{{categoria.nombreCategoria}} </td>
+                        <td>{{categoria.descripcionCategoria}}</td>
+                        <td> <button class="btn btn-outline-warning btn-sm" routerLink="['/categorias',{{categoria.idCategoria}}]">Actualizar</button> </td>
+                        <td> <button class="btn btn-outline-danger btn-sm">Eliminar</button> </td>
+                    </tr>
+                 
+                    
+                </tbody>
+            </table>
+    </div>
 </div>
 
