@@ -27,8 +27,8 @@
                         <td>{{categoria.idCategoria}}</td>
                         <td>{{categoria.nombreCategoria}} </td>
                         <td>{{categoria.descripcionCategoria}}</td>
-                        <td> <button class="btn btn-outline-warning btn-sm" routerLink="['/categorias',{{categoria.idCategoria}}]">Actualizar</button> </td>
-                        <td> <button class="btn btn-outline-danger btn-sm">Eliminar</button> </td>
+                        <td> <button class="btn btn-outline-success btn-sm" RouterLink="['/category',1]">Actualizar</button> </td>
+                        <td> <button class="btn btn-outline-danger btn-sm" (click)="eliminar(categoria)">Eliminar</button> </td>
                     </tr>
                  
                     
