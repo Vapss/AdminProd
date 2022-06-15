@@ -11,33 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class ListadoComponent implements OnInit {
   titulo: string = 'Listado de categorías';
-  listaDeCategorias: Category[]= [
-
-    {
-      idCategoria : 1,
-      nombreCategoria : 'yo1',
-      descripcionCategoria: 'ya'
-  
-    },
-    {
-      idCategoria : 2,
-      nombreCategoria : 'yo2',
-      descripcionCategoria: 'ya'
-  
-    },
-    {
-      idCategoria : 3,
-      nombreCategoria : 'yo3',
-      descripcionCategoria: 'ya'
-  
-    },
-    {
-      idCategoria : 4,
-      nombreCategoria : 'yo4',
-      descripcionCategoria: 'ya'
-  
-    }
-  ];
+  listaDeCategorias: Category[]= [];
   constructor(private servicio : CategoriaService) { }
 
   ngOnInit(): void {
@@ -72,5 +46,33 @@ export class ListadoComponent implements OnInit {
       }
     })
   }
-
+  actualizar(categoria: Category): void {
+    Swal.fire({
+      title: 'Actualizar categoría',
+      text: 'Ingrese el nuevo nombre de la categoría',
+      input: 'text',
+      inputAttributes: {
+        autocapitalize: 'off'
+      },
+      showCancelButton: true,
+      confirmButtonText: 'Guardar',
+      showLoaderOnConfirm: true,
+      preConfirm: (nombre) => {
+        if (!nombre) {
+          return Swal.showValidationMessage(
+            `Ingrese el nombre de la categoría`
+          )
+        }
+        return this.servicio.actualizarCategoria(categoria.idCategoria, nombre).toPromise();
+      }
+    }).then((result) => {
+      if (result.value) {
+        Swal.fire(
+          'Actualizado!',
+          `La categoría ${result.value} ha sido actualizada con éxito.`,
+          'success'
+        )
+      }
+    })
+  }
 }

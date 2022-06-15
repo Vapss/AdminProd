@@ -32,6 +32,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
     ReactiveFormsModule,
     HttpClientModule,
     FontAwesomeModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

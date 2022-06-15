@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { CategoriaService } from './servicios/categoria.service';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +10,8 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 export class AppComponent {
   title = 'AdminProd';
   faCoffee = faCoffee;
+
+  constructor(
+    private categoriaService: CategoriaService
+  ) { }
 }

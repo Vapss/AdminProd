@@ -26,12 +26,12 @@ export class CategoriaService {
     return this.http.get<Category>(`${this.urlEndPoint}/${id}`);
   }
 
-  crearCategoria(category: Category): Observable<Category> {
-    return this.http.post<Category>(this.urlEndPoint, category, {headers: this.httpHeaders});
+  createCategory(category: object): Observable<object> {
+    return this.http.post(`${this.urlEndPoint}`, category, {headers: this.httpHeaders});
   }
 
-  actualizarCategoria(category: Category): Observable<Category> {
-    return this.http.put<Category>(`${this.urlEndPoint}/${category.idCategoria}`, category, {headers: this.httpHeaders});
+  actualizarCategoria(id: number, value: any): Observable<Category> {
+    return this.http.put<Category>(`${this.urlEndPoint}/${id}`, value, {headers: this.httpHeaders});
   }
 
   buscarCategoria(term: string): Observable<Category[]> {
